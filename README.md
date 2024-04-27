@@ -1,9 +1,4 @@
-# C++ C-Strings Exercises
-
-In this homework you are asked to restrict yourself to not using any
-`include` except `<cstddef>`.
-The purpose of this homework is to understand low level
-functionality that is usually provided by libraries.
+# C++ C-Structs Exercises
 
 Compile your code via
 
@@ -41,7 +36,8 @@ the correct outcomes for the following combinations:
   <li>3-2i, 7-3i;</li>
   <li>-5, 7-3i</li>
 </ol>
-Name the source file: `complex_numbers.c`
+
+Name the source file: `complex_numbers.cpp`
 
 
 ## Task 2 - Student Data
@@ -61,6 +57,7 @@ In <code>main(.)</code> ask the user how many students should be stored.
 Create an array holding the correct number of students and fill the array
 by repeatedly calling <code>read_student()</code>. Once finished,
 print your in-memory student database to <code>stdout</code>.<br />
-Name the source file: <kbd>student_database.c</kbd>
+
+Name the source file: `student_database.cpp`
 
 
