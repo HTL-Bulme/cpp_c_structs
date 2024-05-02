@@ -8,11 +8,18 @@ cmake ..
 make -j8  # use 8 processor cores when compiling
 ```
 
+If needed, consult the test files
+([complex_numbers_test.cpp](complex_numbers_test.cpp),
+ [student_database_test.cpp](student_database_test.cpp) and
+ [grand_total_test.cpp](grand_total_test.cpp))
+to understand what exactly your code needs to accomplish.
+
+
 ## Task 1 - Complex Numbers
-Implement a struct `Complex` that stores the `real`
+In `complex_numbers.hpp` implement a struct `Complex` that stores the `real`
 number and the imaginary unit (`imag`). Both `real`
 and `image` should be `double`.
-Implement the following functions:
+Implement the following functions in `complex_numbers.cpp`:
 
 ```cpp
 Complex add(Complex a, Complex b);  // return the sum of `a` and `b`
@@ -22,42 +29,56 @@ Complex mul(Complex a, Complex b);  // return the product of `a` and `b`
 
 Having these functions in place, it becomes possible to add, substract,
 and multiply two complex numbers. The mathematical basis for the
-implementation is available for
-
+implementation is available on Wikipedia for
 [addition and substraction](https://en.wikipedia.org/wiki/Complex_number#Addition_and_subtraction)
 as well as
 [multiplication](https://en.wikipedia.org/wiki/Complex_number#Multiplication_and_square).
 
-Use these functions in <code>main(.)</code> to make sure they produce
-the correct outcomes for the following combinations:
-<ol>
-  <li>5+5i, 7+i;</li>
-  <li>5+5i, 7-3i;</li>
-  <li>3-2i, 7-3i;</li>
-  <li>-5, 7-3i</li>
-</ol>
-
-Name the source file: `complex_numbers.cpp`
+Name the source file `complex_numbers.cpp` and the header file
+`complex_numbers.hpp`.
 
 
 ## Task 2 - Student Data
-Implement a struct that stores information about a student in a struct
+In `student_database.hpp` implement a struct that stores information about a
+student in a struct
 called `Student`. Each student has a
-`std::string first_name`,
-`std::string last_name` and a `uint64_t id`.
+`uint64_t id`,
+`std::string first_name`  and a
+`std::string last_name` (in that order). Don't forget to also declare all used
+functions in the header file.
+
 Implement the following functions:
 
 ```cpp
 Student read_student(std::istream& in);  // read student info from stream
-// print one student per line to stdout
-void print_students(Student students[], size_t dimension);
+// print one student per line to out
+void print_students(std::ostream& out, std::vector<Student> students);
 ```
 
-In <code>main(.)</code> ask the user how many students should be stored.
-Create an array holding the correct number of students and fill the array
-by repeatedly calling <code>read_student()</code>. Once finished,
-print your in-memory student database to <code>stdout</code>.<br />
-
-Name the source file: `student_database.cpp`
+Name the source file `student_database.cpp` and the header file
+`student_database.hpp`.
 
 
+# Task 3 - Calculate Grand Total
+You're given a vector of products with their quantity, name and unit
+price. It is your duty to calculate the grand total (for each product,
+multiply the quantity and its unit price and then calculate the sum of these
+products).
+To do so, implement the function
+`double calculate_grand_total(std::vector<Item> items)`.
+
+The `struct Item` has to be declared in a header file so that it can be
+re-used in other files as well. It must follow the specification in the
+diagram below
+
+```mermaid
+classDiagram
+
+class Item {
+  +uint64_t quantity
+  +std::string name
+  +double price
+}
+```
+
+Name the source file `grand_total.cpp` and the header file `shopping.hpp`.

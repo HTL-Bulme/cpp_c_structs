@@ -1,88 +1,60 @@
 {
   "tests": [
     {
-      "name": "Test CPP implementation of `capitalize`",
-      "setup": "mkdir -p build && cd build; cmake ..; make -j4",
-      "run": "build/c_strings_test [capitalize]",
+      "name": "Test CPP implementation of `add` with complex numbers",
+      "setup": "mkdir -p build && cd build; cmake ..; make -j4 complex_numbers_test",
+      "run": "build/complex_numbers_test [addition]",
       "timeout": 2.5,
       "points": 1
     },
     {
-      "name": "Test CPP implementation of `str_len`",
-      "setup": "mkdir -p build && cd build; cmake ..; make -j4",
-      "run": "build/c_strings_test [str_len]",
-      "timeout": 1,
+      "name": "Test CPP implementation of `sub` with complex numbers",
+      "setup": "mkdir -p build && cd build; cmake ..; make -j4 complex_numbers_test",
+      "run": "build/complex_numbers_test [subtraction]",
+      "timeout": 0.5,
       "points": 1
     },
     {
-      "name": "Test CPP implementation of `invert`",
-      "setup": "mkdir -p build && cd build; cmake ..; make -j4",
-      "run": "build/c_strings_test [invert]",
-      "timeout": 1,
+      "name": "Test CPP implementation of `mul` with complex numbers",
+      "setup": "mkdir -p build && cd build; cmake ..; make -j4 complex_numbers_test",
+      "run": "build/complex_numbers_test [multiplication]",
+      "timeout": 0.5,
       "points": 1
     },
     {
-      "name": "Test CPP implementation of `starts_with`",
-      "setup": "mkdir -p build && cd build; cmake ..; make -j4",
-      "run": "build/c_strings_test [starts_with]",
-      "timeout": 1,
+      "name": "Test reading values into a C struct",
+      "setup": "mkdir -p build && cd build; cmake ..; make -j4 student_database_test",
+      "run": "build/student_database_test [read]",
+      "timeout": 0.5,
       "points": 1
     },
     {
-      "name": "Test CPP implementation of `ends_with`",
-      "setup": "mkdir -p build && cd build; cmake ..; make -j4",
-      "run": "build/c_strings_test [ends_with]",
-      "timeout": 1,
+      "name": "Test printing values from a C struct",
+      "setup": "mkdir -p build && cd build; cmake ..; make -j4 student_database_test",
+      "run": "build/student_database_test [print]",
+      "timeout": 0.5,
       "points": 1
     },
     {
-      "name": "Test CPP implementation of `count`",
-      "setup": "mkdir -p build && cd build; cmake ..; make -j4",
-      "run": "build/c_strings_test [count]",
-      "timeout": 1,
+      "name": "Test calculating the grand total of an empty shopping cart",
+      "setup": "mkdir -p build && cd build; cmake ..; make -j4 grand_total_test",
+      "run": "build/grand_total_test [empty]",
+      "timeout": 0.5,
       "points": 1
     },
     {
-      "name": "Test CPP implementation of `is_ascii`",
-      "setup": "mkdir -p build && cd build; cmake ..; make -j4",
-      "run": "build/c_strings_test [is_ascii]",
-      "timeout": 1,
+      "name": "Test calculating the grand total of a single item",
+      "setup": "mkdir -p build && cd build; cmake ..; make -j4 grand_total_test",
+      "run": "build/grand_total_test [single]",
+      "timeout": 0.5,
       "points": 1
     },
     {
-      "name": "Test CPP implementation of `is_digit`",
-      "setup": "mkdir -p build && cd build; cmake ..; make -j4",
-      "run": "build/c_strings_test [is_digit]",
-      "timeout": 1,
+      "name": "Test calculating the grand total of a regular shopping cart",
+      "setup": "mkdir -p build && cd build; cmake ..; make -j4 grand_total_test",
+      "run": "build/grand_total_test [regular]",
+      "timeout": 0.5,
       "points": 1
-    },
-    {
-      "name": "Test CPP implementation of `index`",
-      "setup": "mkdir -p build && cd build; cmake ..; make -j4",
-      "run": "build/c_strings_test [index]",
-      "timeout": 1,
-      "points": 1
-    },
-    {
-      "name": "Test CPP implementation of `str_copy`",
-      "setup": "mkdir -p build && cd build; cmake ..; make -j4",
-      "run": "build/c_strings_test [str_copy]",
-      "timeout": 1,
-      "points": 2
-    },
-    {
-      "name": "Test CPP implementation of `str_equal`",
-      "setup": "mkdir -p build && cd build; cmake ..; make -j4",
-      "run": "build/c_strings_test [str_equal]",
-      "timeout": 1,
-      "points": 2
-    },
-    {
-      "name": "Test CPP implementation of `join`",
-      "setup": "mkdir -p build && cd build; cmake ..; make -j4",
-      "run": "build/c_strings_test [join]",
-      "timeout": 1,
-      "points": 4
     }
   ],
   "__deactivated_tests": [
