@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.18)
 cmake_policy(SET CMP0048 NEW)
-project(cpp_c_strings VERSION 0.1)
+project(cpp_c_structs VERSION 0.1)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wconversion")
@@ -16,7 +16,9 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(Catch2)
 
 set(CPP_SRCS  # all non-main source files
-  c_strings.cpp
+  complex_numbers.cpp
+  student_database.cpp
+  grand_total.cpp
 )
 
 
